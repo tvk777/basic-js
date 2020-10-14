@@ -2,9 +2,11 @@ const CustomError = require("../extensions/custom-error");
 
 module.exports = function getSeason(date) {
   if (!date) return 'Unable to determine the time of year!';
-  //if (!(date instanceof Date)) return 'THROWN';
+  if (isNaN(date.getTime())) return null;
+
   try {
-    date instanceof Date;
+    //date instanceof Date;
+    Object.prototype.toString.call(date) === "[object Date]"
   } catch (err) {
     return 'THROWN';
   }
