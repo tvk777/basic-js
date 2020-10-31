@@ -5,7 +5,6 @@ module.exports = function getSeason(date) {
   if (isNaN(date.getTime())) return null;
 
   try {
-    //date instanceof Date;
     Object.prototype.toString.call(date) === "[object Date]"
   } catch (err) {
     return 'THROWN';
